@@ -3,6 +3,7 @@
 <head>
 	<title>TypeScript Learning</title>
 <script type="text/javascript" src="type.js"></script>
+<script type="text/javascript" src="classAndModel.js"></script>
 <style type="text/css">
 	* {
   margin: 0;
@@ -206,8 +207,53 @@ PrintVal1({firstnmae:"Vatsal",lastname:"Patel"})</textarea>
 </div>
 <div>
 	<span>Class,...</span>
+	<p><br>&#8594;A class in terms of OOP is a blueprint for creating objects. </p>
+	<p><br>&#8594;A class encapsulates data for the object.</p><br>
+	<div>
+		<span>Encapsulates</span>
+		<p><br>&#8594;express the essential features of (something) in a brief and clearly expressed manner.</p><br><br>
+		<p>&#8594; You order a Big Mac and Fries at MacDonald’s, and after a few minutes, they give it to you.<br><br>
 
-	
+&#8594; Now, you didn’t get involved in telling them how to make that burger,<br>&#8594;  where to fetch the ingredients from,<br>&#8594;  how to put them together,<br>&#8594; how to place it in the packaging and so on.<br>&#8594; All that stuff was <b>encapsulated</b> behind the scenes - you requested a meal, and you got it.</p>
+	</div>
+
+	<div>
+		<textarea>
+			interface Human {
+  firstName: string;
+  lastName: string;
+  name?: Function;
+  isLate?(time: Date): Function;
+}
+
+class Person implements Human {
+  constructor(public firstName, public lastName) {
+  }
+
+  public name() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  protected whoAreYou() {
+    return `Hi i'm ${this.name()}`;
+  }
+}
+
+class Student extends Person {
+  constructor(public firstName, public lastName, public course) {
+    super(firstName, lastName);
+  }
+
+  whoAreYou() {
+    return `${super.whoAreYou()} and i'm studying ${this.course}`;
+  }
+}
+
+let asim = new Student("Asim", "Hussain", "typescript");
+console.log(asim.whoAreYou());
+		</textarea>
+	</div>
+	<a href="https://codecraft.tv/courses/angular/es6-typescript/classinterface/">ref..</a>
 </div>
 
 
